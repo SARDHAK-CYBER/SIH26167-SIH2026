@@ -1,0 +1,42 @@
+{
+  "name": "SatQueryAI",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "start": "npm run build && node server/index.ts",
+    "setup:jp2": "node scripts/setup-jp2.mjs",
+    "secrets": "node scripts/secrets.mjs",
+    "api": "node server/index.ts",
+    "test": "node --test tests/*.test.ts tests/*.test.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "copy-static": "cpx \"public/**/*\" dist/ && cpx \"src/**/*.css\" dist/",
+    "build:css": "postcss src/**/*.css -o dist/style.css"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "express": "^4.19.2",
+    "geotiff": "^3.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.42.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "cpx": "^1.2.1",
+    "http-proxy-middleware": "^2.0.6",
+    "oxlint": "^1.79.0",
+    "postcss-cli": "^10.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}
